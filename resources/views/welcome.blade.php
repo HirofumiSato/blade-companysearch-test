@@ -47,8 +47,8 @@
                         <td class="px-6 py-4 whitespace-nowrap">{{ $company->id }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $company->company }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $company->name }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $company->city }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $company->postcode }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $company->city }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $company->description }}</td>
                     </tr>
                     @endforeach
