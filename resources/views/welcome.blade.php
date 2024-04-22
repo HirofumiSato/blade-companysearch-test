@@ -21,6 +21,16 @@
                         <div class="flex-1 min-w-0">
                             <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Company Search</h2>
                         </div>
+                        <form method="POST" action="" id="prefectureForm">
+                            @csrf
+                            <select name="prefecture_name" onchange="updateAction(this.value);">
+                                <option value="">都道府県を選択</option>
+                                @foreach ($prefectures as $prefecture)
+                                    <option value="{{ $prefecture->name }}">{{ $prefecture->name }}</option>
+                                @endforeach
+                            </select>
+                            <input type="hidden" name="prefecture_code" value="{{ $prefecture->code }}">
+                        </form>
                         <div class="mt-4 flex sm:mt-0 sm:ml-4">
                             <input type="text" name="search" id="search" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Search...">
                             <button type="submit" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -57,3 +67,10 @@
         </div>
     </body>
 </html>
+
+<script>
+function updateAction(value) {
+    document.getElementById('prefectureForm').action = "/searchbyprefecture/" + value;
+    document.getElementById('prefectureForm').submit();
+}
+</script>

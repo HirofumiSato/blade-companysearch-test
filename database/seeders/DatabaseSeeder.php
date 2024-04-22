@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         $this->call(PrefectureSeeder::class);
-        Company::factory(100)->create();
+        Company::factory(300)->create();
 
         // User::factory()->create([
         //     'name' => 'Test User',
